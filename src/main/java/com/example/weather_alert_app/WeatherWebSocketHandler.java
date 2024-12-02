@@ -12,6 +12,7 @@ import java.util.HashSet;
 public class WeatherWebSocketHandler extends TextWebSocketHandler {
 
     private Set<WebSocketSession> sessions = new HashSet<>();
+    private Set<String> seenAlerts = new HashSet<>();
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
@@ -26,6 +27,10 @@ public class WeatherWebSocketHandler extends TextWebSocketHandler {
     }
 
     public void sendAlert(String alertMessage) {
+        if (seenAlerts.contains(alertMessage)) {
+            return;
+        }
+
         for (WebSocketSession session : sessions) {
             try {
                 session.sendMessage(new TextMessage(alertMessage));

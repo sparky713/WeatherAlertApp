@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
@@ -110,7 +109,7 @@ public class WeatherController {
             for (Map<String, Object> alert : alerts) {
                 String title = (String) alert.get("title");
                 String description = (String) alert.get("description");
-                String alertMessage = "Warning [" + weather.getCity() + ", " + weather.getCountry() + "]\n" + title + ": " + description;
+                String alertMessage = "⚠\uFE0F Warning [" + weather.getCity() + ", " + weather.getCountry() + "]\n" + title + ": " + description;
                 weatherWebSocketHandler.sendAlert(alertMessage);
             }
         }

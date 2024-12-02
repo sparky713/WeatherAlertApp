@@ -17,6 +17,6 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(weatherWebSocketHandler, "/alerts").setAllowedOrigins("*");
+        registry.addHandler(weatherWebSocketHandler, "/weather-alerts").setAllowedOrigins("*");
     }
 }
