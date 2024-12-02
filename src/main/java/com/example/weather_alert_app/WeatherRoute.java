@@ -14,12 +14,12 @@ public class WeatherRoute extends RouteBuilder {
         // get weather data
         from("direct:fetchWeather")
                 .toD("${body}")
-                .convertBodyTo(String.class)
-                .log("Fetched weather data: ${body}");
+                .convertBodyTo(String.class);
+//                .log("Fetched weather data: ${body}");
 
-        // update weather every 5 seconds
-        from("timer:weatherUpdate?period=5000")
-                .log("Updating the weather...")
+        // update weather every 60 seconds
+        from("timer:weatherUpdate?period=60000")
+//                .log("Updating the weather...")
                 .bean(weatherController, "updateWeatherData");
     }
 }

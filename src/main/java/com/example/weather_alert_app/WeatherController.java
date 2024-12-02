@@ -55,7 +55,9 @@ public class WeatherController {
             }
 
             // get weather info & save to database
-            return weatherRepository.save(getWeather(lat, lon));
+            Weather weather = getWeather(lat, lon);
+            checkAndSendWeatherAlerts(weather, lat, lon);
+            return weatherRepository.save(weather);
 
         } catch (Exception e) {
             e.printStackTrace();

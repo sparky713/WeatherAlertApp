@@ -31,3 +31,4 @@
 - [Spring Boot with Thymeleaf Example](https://www.geeksforgeeks.org/spring-boot-thymeleaf-with-example/)
 - [OpenWeatherMap API](https://openweathermap.org/current)
 - [WebSocket with Spring Boot](https://www.geeksforgeeks.org/spring-boot-web-socket/)
+- [WebSocketHandler API](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/socket/WebSocketHandler.html)
