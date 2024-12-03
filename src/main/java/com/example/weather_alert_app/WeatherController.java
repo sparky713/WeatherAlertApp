@@ -131,7 +131,7 @@ public class WeatherController {
 
         String city = (String) weatherMap.get("name");
         String country = (String) ((Map<String, Object>) weatherMap.get("sys")).getOrDefault("country", "Unknown");
-        double temperature = (Double) ((Map<String, Object>) weatherMap.get("main")).get("temp");
+        double temperature = ((Number) ((Map<String, Object>) weatherMap.get("main")).get("temp")).doubleValue();
         List<Map<String, Object>> weatherList = (List<Map<String, Object>>) weatherMap.get("weather");
         String description = (String) weatherList.get(0).get("description");
 
