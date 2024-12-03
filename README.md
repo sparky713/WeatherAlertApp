@@ -24,6 +24,9 @@
 - Search/Add/Delete a City
 - Alerts for Extreme Weather Conditions
 
+## Demo:
+https://github.com/user-attachments/assets/0fc79e44-b20e-49ef-884f-e670cff563f1
+
 ## References
 
 - [H2 Database with Spring Boot](https://www.baeldung.com/spring-boot-h2-database)
